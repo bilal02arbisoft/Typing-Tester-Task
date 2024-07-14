@@ -1,4 +1,4 @@
-from word import WordDetail
+from .word import WordDetail
 
 
 class TypingTestResult:
