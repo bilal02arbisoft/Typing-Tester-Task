@@ -110,5 +110,3 @@ class TypingTestCalculator:
             to_type_word
 
         )
-
-
