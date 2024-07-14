@@ -1,3 +1,5 @@
+from .typing_test_result import TypingTestResult
+
 
 class TypingTestReport:
 
