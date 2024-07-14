@@ -1,3 +1,7 @@
+from .typing_test_result import TypingTestResult
+from .word import WordDetail
+
+
 class TypingTestCalculator:
 
     @staticmethod
