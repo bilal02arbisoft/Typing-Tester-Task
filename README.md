@@ -64,7 +64,7 @@ sudo python3 main.py
 ## Sample Outputs:
 
 ### Output-1
-```bash
+```sh
 ----------Score Report---------
 Word: ethician
 No. of letters: 8
@@ -77,7 +77,7 @@ Definition: a philosopher who specializes in ethics
 Pronunciation: Not Found
 ```
 #### Output-2
-```bash
+```sh
 ----------Score Report---------
 Word: we'd
 No. of letters: 4
@@ -90,7 +90,7 @@ Definition: Not found
 Pronunciation: wid
 ```
 ### Output-3
-```bash
+```sh
 ----------Score Report---------
 Word: giant crab
 No. of letters: 10
