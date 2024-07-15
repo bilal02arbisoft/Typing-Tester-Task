@@ -3,7 +3,7 @@
 ## Introduction
 Typing Tester is a Python application designed to help users improve their typing skills.
 It presents random words for users to type, tracks their typing speed and accuracy, and generates detailed performance reports.
-The application fetches random words from an external API, conducts a typing test, calculates scores, and generates comprehensive performace reports. 
+The application fetches random words from an external API, conducts a typing test, calculates scores, and generates comprehensive performance reports. 
 Its modular design ensures that the application is easy to maintain and extend, making it a great tool for both learning and assessment.
 
 ## Features
