@@ -85,3 +85,6 @@ class RandomWordFetcher:
 
             raise APIFetchError(f'Error Fetching Random Word from API: {e}')
 
+        except Exception as e:
+
+            raise ValueError(f'Error occurred : {e}')
