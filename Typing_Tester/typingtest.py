@@ -103,12 +103,13 @@ class TypingTestManager:
 
     def start_typing_test(self, word: str) -> TypingTestSession:
 
-        self.monitor_back_space.reset_back_space_count()
-        self.input_capture.display_word_on_screen(word)
-        self.monitor_back_space.monitor_back_space_key()
-        self.input_capture.wait_for_user_ready()
-
         try:
+
+            self.monitor_back_space.reset_back_space_count()
+            self.input_capture.display_word_on_screen(word)
+            self.monitor_back_space.monitor_back_space_key()
+            self.input_capture.wait_for_user_ready()
+
             start_time = self.input_capture.record_start_time()
             user_typed_word = self.input_capture.capture_user_input()
             end_time = self.input_capture.record_end_time()
