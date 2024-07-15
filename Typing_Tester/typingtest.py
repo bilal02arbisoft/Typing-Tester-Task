@@ -108,17 +108,29 @@ class TypingTestManager:
         self.monitor_back_space.monitor_back_space_key()
         self.input_capture.wait_for_user_ready()
 
-        start_time = self.input_capture.record_start_time()
-        user_typed_word = self.input_capture.capture_user_input()
-        end_time = self.input_capture.record_end_time()
+        try:
+            start_time = self.input_capture.record_start_time()
+            user_typed_word = self.input_capture.capture_user_input()
+            end_time = self.input_capture.record_end_time()
+            time_taken = self.input_capture.compute_time_taken_by_user(start_time, end_time)
 
-        self.monitor_back_space.stop_monitoring_keys()
+            return TypingTestSession(
 
-        time_taken = self.input_capture.compute_time_taken_by_user(start_time, end_time)
+                user_typed_word,
+                str(round(time_taken, 2)),
+                self.monitor_back_space.get_backspace_count()
+            )
 
-        return TypingTestSession(
+        except Exception as e:
 
-            user_typed_word,
-            str(round(time_taken, 2)),
-            self.monitor_back_space.get_backspace_count()
-        )
+            raise RuntimeError(f'Error during typing test: {e}')
+
+        finally:
+
+            self.monitor_back_space.stop_monitoring_keys()
+
+
+
+
+
+
