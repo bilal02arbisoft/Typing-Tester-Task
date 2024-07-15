@@ -110,7 +110,7 @@ The application includes robust error handling to manage scenarios such as:
 - json.JSONDecodeError: Raised for errors in decoding JSON responses.
 - ValueError: Raised for invalid input values during the test.
 - RuntimeError: Raised for general errors during execution.
-Error messages are logged to the console, and the application attempts to handle and recover from errors where possible.
+
 
 # Code Contributions
 
