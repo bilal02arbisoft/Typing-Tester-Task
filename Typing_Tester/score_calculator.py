@@ -70,21 +70,12 @@ class TypingTestCalculator:
         total_penalty_score = self.compute_negative_score(user_typed_word, to_type_word,
                                                           back_spaces_count)
 
-        return (100 - round(total_penalty_score, 2)) if total_penalty_score <= 100 else 0
+        return max(100 - round(total_penalty_score, 2), 0)
 
     @staticmethod
     def process_raw_score(raw_score) -> float:
 
-        if raw_score <= 1:
-            return 100
-
-        else:
-            if (100 / float(raw_score)) > 0:
-
-                return 100 / float(raw_score)
-
-            else:
-                return 0
+        return max(100 / float(raw_score), 0) if raw_score > 1 else 100
 
     def compute_time_score(self, time_taken, user_typed_word) -> float:
 
@@ -95,18 +86,24 @@ class TypingTestCalculator:
     def compute_total_score(self, time_taken: str, user_typed_word: str,
                             to_type_word: WordDetail, back_spaces_used: int):
 
-        time_score = self.compute_time_score(time_taken, user_typed_word)
-        accuracy_score = self.compute_accuracy_score(user_typed_word, to_type_word.get_word(),
-                                                     back_spaces_used)
-        total_score = self.compute_average_score(time_score, accuracy_score)
+        try:
 
-        return TypingTestResult(
+            time_score = self.compute_time_score(time_taken, user_typed_word)
+            accuracy_score = self.compute_accuracy_score(user_typed_word, to_type_word.get_word(),
+                                                         back_spaces_used)
+            total_score = self.compute_average_score(time_score, accuracy_score)
 
-            time_score,
-            accuracy_score,
-            total_score,
-            time_taken,
-            user_typed_word,
-            to_type_word
+            return TypingTestResult(
 
-        )
+                time_score,
+                accuracy_score,
+                total_score,
+                time_taken,
+                user_typed_word,
+                to_type_word
+
+            )
+
+        except Exception as e:
+
+            raise ValueError(f'Error Occurred {e}')
