@@ -34,12 +34,10 @@ class TypingInputCapture:
 
     @staticmethod
     def display_word_on_screen(word):
-
         print(f'Word to type: {word}')
 
     @staticmethod
     def wait_for_user_ready() -> None:
-
         input('Press Enter whenever you are ready to type the word. '
               'After you finish typing Press Enter immediately\n')
 
@@ -67,15 +65,12 @@ class TypingInputCapture:
 class BackspaceMonitor:
 
     def __init__(self):
-
         self.back_space_count = 0
 
     def increment_back_space_count(self) -> None:
-
         self.back_space_count += 1
 
     def reset_back_space_count(self) -> None:
-
         self.back_space_count = 0
 
     def get_backspace_count(self) -> int:
@@ -83,28 +78,23 @@ class BackspaceMonitor:
         return self.back_space_count
 
     def monitor_back_space_key(self):
-
         keyboard.on_press(lambda event: self.increment_back_space_count()
                           if event.name == 'delete' else None)
 
     @staticmethod
     def stop_monitoring_keys() -> None:
-
         keyboard.unhook_all()
 
 
 class TypingTestManager:
 
     def __init__(self):
-
         self.input_capture = TypingInputCapture()
         self.monitor_back_space = BackspaceMonitor()
         self.back_space_count = 0
 
     def start_typing_test(self, word: str) -> TypingTestSession:
-
         try:
-
             self.monitor_back_space.reset_back_space_count()
             self.input_capture.display_word_on_screen(word)
             self.monitor_back_space.monitor_back_space_key()
@@ -116,18 +106,14 @@ class TypingTestManager:
             time_taken = self.input_capture.compute_time_taken_by_user(start_time, end_time)
 
             return TypingTestSession(
-
                 user_typed_word,
                 str(round(time_taken, 2)),
                 self.monitor_back_space.get_backspace_count()
             )
 
         except Exception as e:
-
             raise RuntimeError(f'Error during typing test: {e}')
-
         finally:
-
             self.monitor_back_space.stop_monitoring_keys()
 
 
