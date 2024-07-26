@@ -1,6 +1,6 @@
 import http.client
 import json
-from .word import WordDetail
+from Typing_Tester.word import WordDetail
 
 
 class APIFetchError(Exception):
