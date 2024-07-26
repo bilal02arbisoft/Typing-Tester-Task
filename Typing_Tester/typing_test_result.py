@@ -1,4 +1,4 @@
-from .word import WordDetail
+from Typing_Tester.word import WordDetail
 
 
 class TypingTestResult:
@@ -6,7 +6,6 @@ class TypingTestResult:
     def __init__(self, time_score: float, accuracy_score: float,
                  total_score: float, time_taken: str, user_typed_word: str,
                  to_type_word: WordDetail):
-
         self.time_score = time_score
         self.accuracy_score = accuracy_score
         self.total_score = total_score
