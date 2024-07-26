@@ -1,5 +1,5 @@
-from .typing_test_result import TypingTestResult
-from .word import WordDetail
+from Typing_Tester.typing_test_result import TypingTestResult
+from Typing_Tester.word import WordDetail
 
 
 class TypingTestCalculator:
