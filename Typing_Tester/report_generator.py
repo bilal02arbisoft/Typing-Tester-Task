@@ -1,4 +1,4 @@
-from .typing_test_result import TypingTestResult
+from Typing_Tester.typing_test_result import TypingTestResult
 
 
 class TypingTestReport:
