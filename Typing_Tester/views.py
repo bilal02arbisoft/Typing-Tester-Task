@@ -15,7 +15,7 @@ def start_test(start_response, request_body):
     api_key = data['api_key']
     word_fetcher = RandomWordFetcher(api_key)
     word = word_fetcher.fetch_word().to_dict()
-    response = {"word_to_type": word, "start_time": start_time}
+    response = {'word_to_type': word, 'start_time': start_time}
 
     return [json.dumps(response, indent=5)]
 

@@ -17,7 +17,7 @@ class WSGIServer:
         server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         server_socket.bind((self.host, self.port))
         server_socket.listen(5)
-        print(f"Serving on {self.host}:{self.port}")
+        print(f'Serving on {self.host}:{self.port}')
 
         while True:
             client_socket, client_address = server_socket.accept()
@@ -25,7 +25,7 @@ class WSGIServer:
             client_socket.close()
 
     def handle_request(self, client_socket):
-        request_data = client_socket.recv(1024).decode("utf-8")
+        request_data = client_socket.recv(1024).decode('utf-8')
         print(f'Request received: {request_data}')
         environ = self.parse_request(request_data)
         response_body = self.app(environ, self.start_response)
