@@ -25,3 +25,16 @@ class TypingTestResult:
                 f'Total Score: {self.total_score}%\n'
                 f'Definition: {self.to_type_word.get_definition()}\n'
                 f'Pronunciation: {self.to_type_word.get_pronunciation()}\n')
+
+    def to_dict(self):
+        return {
+            'Word': self.to_type_word.get_word(),
+            'No. of letters': len(self.to_type_word.get_word()),
+            'User typed': self.user_typed_word,
+            'Time taken by the user': f'{self.time_taken}sec',
+            'Accuracy Score': f'{self.accuracy_score}%',
+            'Time Score': f'{self.time_score}%',
+            'Total Score': f'{self.total_score}%',
+            'Definition': self.to_type_word.get_definition(),
+            'Pronunciation': self.to_type_word.get_pronunciation()
+        }
