@@ -1,14 +1,13 @@
-
 from Typing_Tester.typingtest import TypingTestManager
 from Typing_Tester.score_calculator import TypingTestCalculator
 from Typing_Tester.report_generator import TypingTestReport
 from Typing_Tester.random_word_fetcher import RandomWordFetcher
 
 
-def run_typing_test_application(api_key: str):
+def run_typing_test_application():
 
     try:
-        word_fetcher = RandomWordFetcher(api_key)
+        word_fetcher = RandomWordFetcher()
         typing_test_manager = TypingTestManager()
         score_calculator = TypingTestCalculator()
         report_generator = TypingTestReport()
@@ -26,6 +25,4 @@ def run_typing_test_application(api_key: str):
         print(report)
 
     except Exception as e:
-
         print(f'{e}')
-
