@@ -1,5 +1,12 @@
 class WordDetail:
+    """
+       A class to represent a word along with its definition and pronunciation.
 
+       Attributes:
+           word (str): The word itself.
+           definition (str): The meaning of the word.
+           pronunciation (str): The pronunciation of the word in phonetic transcription.
+    """
     def __init__(self, word: str, definition: str,
                  pronunciation: str):
 
@@ -24,4 +31,3 @@ class WordDetail:
         return (f'Word: {self.word}\n'
                 f'Definition: {self.definition}\n'
                 f'Pronunciation: {self.pronunciation}')
-
