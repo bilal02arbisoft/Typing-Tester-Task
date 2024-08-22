@@ -1,5 +1,6 @@
-import keyboard
 import time
+
+import keyboard
 
 
 def exception_handler(func):
