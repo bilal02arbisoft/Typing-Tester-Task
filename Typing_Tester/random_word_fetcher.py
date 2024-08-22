@@ -2,6 +2,7 @@ import http.client
 import json
 import os
 from http import HTTPStatus
+
 from Typing_Tester.word import WordDetail
 
 
@@ -61,7 +62,7 @@ def api_request(method: str, endpoint: str, headers: dict) -> dict:
     try:
         fetched_data = response.read()
 
-        return json.loads(fetched_data.decode("utf-8"))
+        return json.loads(fetched_data.decode('utf-8'))
     except (http.client.HTTPException, json.JSONDecodeError) as e:
         raise APIFetchError(f"Error fetching data: {e}")
 
