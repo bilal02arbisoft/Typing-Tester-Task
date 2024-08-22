@@ -1,7 +1,7 @@
-from Typing_Tester.typingtest import TypingTestManager
-from Typing_Tester.score_calculator import TypingTestCalculator
-from Typing_Tester.report_generator import TypingTestReport
 from Typing_Tester.random_word_fetcher import RandomWordFetcher
+from Typing_Tester.report_generator import TypingTestReport
+from Typing_Tester.score_calculator import TypingTestCalculator
+from Typing_Tester.typingtest import TypingTestManager
 
 
 def run_typing_test_application():
