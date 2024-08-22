@@ -3,7 +3,7 @@
 ## Introduction
 Typing Tester is a Python application designed to help users improve their typing skills.
 It presents random words for users to type, tracks their typing speed and accuracy, and generates detailed performance reports.
-The application fetches random words from an external API, conducts a typing test, calculates scores, and generates comprehensive performance reports. 
+The application fetches random words from an external API, conducts a typing test, calculates scores, and generates comprehensive performance reports.
 Its modular design ensures that the application is easy to maintain and extend, making it a great tool for both learning and assessment.
 
 ## Features
@@ -59,7 +59,7 @@ TypingTester-Task/
 ## Detailed Usage
 To run the application, use the `main.py` file. Below is example usage :
 ```sh
-sudo python3 main.py 
+sudo python3 main.py
 ```
 ## Sample Outputs:
 
@@ -139,12 +139,7 @@ The application includes robust error handling to manage scenarios such as:
 
 1. **Create a Pull Request:**
    - Submit a pull request to the main branch of the original repository.
-   
+
 2. **Describe Your Changes:**
    - Provide a clear description of your changes in the pull request.
    - Mention any related issues by linking them (#issue_number).
-
-
-   
-
-    
